@@ -19,11 +19,33 @@
 
     <!-- Mon script JS -->
     <script type="text/babel">
+
+        let variable = "Youpi";
+
         function Header() {
             return (<h1>La maison jungle</h1>)
         }
 
-        ReactDOM.render(<Header />, document.getElementById('root'))
+        function Description() {
+            const text = "Ici achetez toutes les plantes dont vous avez toujours rêvées";
+            const emoji = "🌵🌱🎍"
+            return (<p>{ text + " " + emoji}</p>)
+        }
+
+        function Test() {
+            return (<p>Ceci est un test avec une variable : { variable.toUpperCase() }</p>)
+        }
+        
+        function Banner() {
+            return (<div>
+                <Header />
+                <Description />
+            </div>)
+        }
+
+
+        ReactDOM.render(<React.Fragment><Banner /><Test /></React.Fragment>, document.getElementById("root"))
+
     </script>
 
 
